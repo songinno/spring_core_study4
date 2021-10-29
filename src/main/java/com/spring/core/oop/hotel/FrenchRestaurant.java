@@ -1,14 +1,17 @@
 package com.spring.core.oop.hotel;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 //3
-@Component
+@Component("fr") // 이렇게 이름 지어줄 수 있음. Hotel @Qualifier에 fr이라고 적으면 됨.
 public class FrenchRestaurant implements Restaurant{
 
     private final Chef chef; // 셰프가 누구든 상관없음. 요리만 할 줄 알면됨. -> interface로.
 
-    public FrenchRestaurant(Chef chef) {
+    @Autowired
+    public FrenchRestaurant(@Qualifier("kimChef") Chef chef) {
         this.chef = chef;
     }
 

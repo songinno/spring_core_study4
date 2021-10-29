@@ -8,5 +8,6 @@ public class KimChef implements Chef{
     @Override
     public void cook() {
         System.out.println("김쉐프가 요리합니다.");
+        System.out.println("프랑스요리만");
     }
 }
